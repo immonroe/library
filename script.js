@@ -1,36 +1,28 @@
-let myLibrary = []
+// Create a library object with an empty books array
+const library = {
+  books: []
+}
 
-function Book (title, author, pages, read) {
-  // the constructor...
+// Book constructor function
+function Book (title, author, pages, isRead) {
   this.title = title
   this.author = author
   this.pages = pages
-  this.read = read
+  this.isRead = isRead
 }
 
-Book.prototype.sayTitle = function () {
-  console.log(this.title)
+// Function to add a book to the library
+function addBookToLibrary(title, author, pages, isRead) {
+  let book = new Book(title, author, pages, isRead);
+  library.books.push(book);
 }
 
-Book.prototype.sayAuthor = function () {
-  console.log(this.author)
-}
-
-Book.prototype.sayPages = function () {
-  console.log(this.pages)
-}
-
-Book.prototype.sayRead = function () {
-  console.log(this.read)
-}
-
-const bookOne = new Book('Bible', 'God', '1200', 'yes')
-bookOne.sayTitle()
-
-const bookTwo = new Book('Lord of the Rings', 'J.R.R. Tolkien', '1178', 'no')
-bookTwo.sayAuthor()
-
-function addBookToLibrary() {
-  // do stuff here
-  // create function to loop over items and add them to myLibrary array
+// Function to remove a book from the library
+function removeBookFromLibrary(title) {
+  for (let i = 0; i < library.books.length; i++) {
+    if (library.books[i].title === title) {
+      library.books.splice(i, 1)
+      break
+    }
+  }
 }
