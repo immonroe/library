@@ -1,0 +1,22 @@
+.card {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  .card p {
+    margin-bottom: 0;
+  }
+  
+  .card .author {
+    font-weight: bold;
+  }
+  
+  .card .pages {
+    font-style: italic;
+  }

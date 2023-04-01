@@ -73,12 +73,31 @@ function displayBooks() {
   for (let i = 0; i < library.books.length; i++) {
     let book = library.books[i];
 
-    let bookInfo = document.createElement("p");
-    bookInfo.textContent = `Title: ${book.title}, Author: ${book.author}, Pages: ${book.pages}, Read: ${book.isRead}`;
+    let bookInfo = document.createElement("div");
+    bookInfo.classList.add("card");
+
+    let bookTitle = document.createElement("h2");
+    bookTitle.textContent = book.title;
+    bookInfo.appendChild(bookTitle);
+
+    let bookAuthor = document.createElement("p");
+    bookAuthor.classList.add("author");
+    bookAuthor.textContent = `Author: ${book.author}`;
+    bookInfo.appendChild(bookAuthor);
+
+    let bookPages = document.createElement("p");
+    bookPages.classList.add("pages");
+    bookPages.textContent = `Pages: ${book.pages}`;
+    bookInfo.appendChild(bookPages);
+
+    let bookRead = document.createElement("p");
+    bookRead.textContent = `Read: ${book.isRead ? "Yes" : "No"}`;
+    bookInfo.appendChild(bookRead);
 
     bookList.appendChild(bookInfo);
   }
 }
+
 
 // Alternate way to add books to library upon load of page (sample books)
 // library.books.push(new Book("The Catcher in the Rye", "J.D. Salinger", 234, false));
