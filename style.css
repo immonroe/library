@@ -1,42 +1,47 @@
+h1 {
+    display: flex;
+    justify-content: center;
+}
+
 .card {
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 10px;
-    width: 100%;
-    box-sizing: border-box;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+.card .author {
+  font-weight: bold;
+}
+
+.card .pages {
+  font-style: italic;
+}
+
+@media only screen and (min-width: 600px) {
+  .card {
+    width: 48%;
+    margin-right: 2%;
+    margin-bottom: 20px;
   }
-  
-  .card h2 {
-    margin-top: 0;
+
+  .card:nth-child(2n+2) {
+    margin-right: 0;
   }
-  
-  .card p {
-    margin-bottom: 0;
+
+  #book-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  
-  .card .author {
-    font-weight: bold;
-  }
-  
-  .card .pages {
-    font-style: italic;
-  }
-  
-  @media only screen and (min-width: 600px) {
-    .card {
-      width: 48%;
-      margin-right: 2%;
-      margin-bottom: 20px;
-    }
-  
-    .card:nth-child(2n+2) {
-      margin-right: 0;
-    }
-  
-    #book-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  }
+}
