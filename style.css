@@ -3,6 +3,8 @@
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .card h2 {
@@ -19,4 +21,22 @@
   
   .card .pages {
     font-style: italic;
+  }
+  
+  @media only screen and (min-width: 600px) {
+    .card {
+      width: 48%;
+      margin-right: 2%;
+      margin-bottom: 20px;
+    }
+  
+    .card:nth-child(2n+2) {
+      margin-right: 0;
+    }
+  
+    #book-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
