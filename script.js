@@ -1,3 +1,26 @@
+const addBookButton = document.getElementById("add-book");
+const bookModal = document.getElementById("book-modal");
+const closeBtn = document.querySelector(".close");
+const addBookBtn = document.getElementById("add-book-btn");
+const books = [];
+
+// Open the modal
+addBookButton.addEventListener("click", function() {
+  bookModal.style.display = "block";
+});
+
+// Close the modal when clicking on the X button
+closeBtn.addEventListener("click", function() {
+  bookModal.style.display = "none";
+});
+
+// Close the modal when clicking outside of it
+window.addEventListener("click", function(event) {
+  if (event.target == bookModal) {
+    bookModal.style.display = "none";
+  }
+});
+
 // Create a library object with an empty books array
 const library = {
   books: [
@@ -29,42 +52,6 @@ function Book(title, author, pages, isRead) {
   this.pages = pages;
   this.isRead = isRead;
 }
-
-// Function to add a book to the library
-function addBookToLibrary() {
-  let title = prompt("Enter the book's title:");
-  if (title === null) { // User clicked cancel or closed the prompt window
-    return;
-  }
-
-  let author = prompt("Enter the book's author:");
-  if (author === null) { // User clicked cancel or closed the prompt window
-    return;
-  }
-
-  let pages = parseInt(prompt("Enter the number of pages:"));
-  if (isNaN(pages)) { // Pages input is not a number
-    return;
-  }
-
-  let isRead = confirm("Have you read this book?");
-  // Pressing okay = true | Pressing cancel = false
-
-  let book = new Book(title, author, pages, isRead);
-  library.books.push(book); // New books created will be added to books array in library object
-
-  displayBooks();
-}
-
-// Function to remove a book from the library
-// function removeBookFromLibrary (title) {
-//   for (let i = 0; i < library.books.length; i++) {
-//     if (library.books[i].title === title) {
-//       library.books.splice(i, 1)
-//       break
-//     }
-//   }
-// }
 
 function displayBooks() {
   let bookList = document.getElementById("book-list");
@@ -98,12 +85,43 @@ function displayBooks() {
   }
 }
 
+// function addBookToLibrary() {
+//   // Get input values
+//   const addBookForm = document.querySelector("form");
+//   const title = document.getElementById("title").value;
+//   const author = document.getElementById("author").value;
+//   const pages = document.getElementById("pages").value;
+//   const isRead = document.getElementById("read").checked;
 
-// Alternate way to add books to library upon load of page (sample books)
-// library.books.push(new Book("The Catcher in the Rye", "J.D. Salinger", 234, false));
-// library.books.push(new Book("Pride and Prejudice", "Jane Austen", 432, true));
+//   // Create new book object
+//   const newBook = new Book(title, author, pages, isRead);
 
+//   // Add new book to library
+//   library.books.push(newBook);
+
+//   // Clear form and close modal
+//   document.getElementById("add-book-form").reset();
+//   bookModal.style.display = "none";
+
+//   // Refresh book list
+//   displayBooks();
+// }
+
+function addBookToLibrary() {
+  const addBookForm = document.querySelector("form");
+  const title = document.getElementById("title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const isRead = document.getElementById("read").checked;
+  const book = new Book(title, author, pages, isRead);
+  library.books.push(book);
+  addBookForm.reset();
+  bookModal.style.display = "none";
+  displayBooks();
+}
+
+// Add event listener to add book button
+addBookBtn.addEventListener("click", addBookToLibrary);
+
+// Display initial book list
 displayBooks();
-
-let addBookButton = document.getElementById("add-book");
-addBookButton.addEventListener("click", addBookToLibrary);
