@@ -1,8 +1,8 @@
-const addBookButton = document.getElementById("add-book");
+// selectors
+const addBookButton = document.getElementById("add-book"); // opens modal menu
 const bookModal = document.getElementById("book-modal");
 const closeBtn = document.querySelector(".close");
-const addBookBtn = document.getElementById("add-book-btn");
-const books = [];
+const addBookBtn = document.getElementById("add-book-btn"); // appends book to books array in library object
 
 // Open the modal
 addBookButton.addEventListener("click", function() {
@@ -62,6 +62,7 @@ function displayBooks() {
 
     let bookInfo = document.createElement("div");
     bookInfo.classList.add("card");
+    bookInfo.classList.add("book-card");
 
     let bookTitle = document.createElement("h2");
     bookTitle.textContent = book.title;
@@ -85,38 +86,25 @@ function displayBooks() {
   }
 }
 
-// function addBookToLibrary() {
-//   // Get input values
-//   const addBookForm = document.querySelector("form");
-//   const title = document.getElementById("title").value;
-//   const author = document.getElementById("author").value;
-//   const pages = document.getElementById("pages").value;
-//   const isRead = document.getElementById("read").checked;
-
-//   // Create new book object
-//   const newBook = new Book(title, author, pages, isRead);
-
-//   // Add new book to library
-//   library.books.push(newBook);
-
-//   // Clear form and close modal
-//   document.getElementById("add-book-form").reset();
-//   bookModal.style.display = "none";
-
-//   // Refresh book list
-//   displayBooks();
-// }
-
 function addBookToLibrary() {
+  // Get input values
   const addBookForm = document.querySelector("form");
   const title = document.getElementById("title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
   const isRead = document.getElementById("read").checked;
+
+  // Create new book object
   const book = new Book(title, author, pages, isRead);
+
+  // Add new book to library
   library.books.push(book);
+
+  // Clear form and close modal
   addBookForm.reset();
   bookModal.style.display = "none";
+
+  // Refresh book list
   displayBooks();
 }
 
