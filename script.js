@@ -75,7 +75,7 @@ function displayBooks() {
 
     let bookPages = document.createElement("p");
     bookPages.classList.add("pages");
-    bookPages.textContent = `Pages: ${book.pages}`;
+    // bookPages.textContent = `Pages: ${book.pages}`;
     bookInfo.appendChild(bookPages);
 
     let bookRead = document.createElement("button");
@@ -117,6 +117,12 @@ function addBookToLibrary() {
 
   // Add new book to library
   library.books.push(book);
+
+  // Validate input
+  if (!title || !author || !pages) {
+    alert("Please fill in all required fields.");
+    return;
+  }
 
   // Clear form and close modal
   addBookForm.reset();

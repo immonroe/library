@@ -20,21 +20,27 @@
 
     <div id="book-modal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            
             <form>
-            <label for="title">Title:</label>
-            <input type="text" id="title" required>
+            <label for="title"></label>
+            <input type="text" id="title" placeholder="Title" required>
 
-            <label for="author">Author:</label>
-            <input type="text" id="author" required>
+            <label for="author"></label>
+            <input type="text" id="author" placeholder="Author" required>
 
-            <label for="pages">Pages:</label>
-            <input type="number" id="pages" required>
-
-            <label for="read">Read:</label>
+            <label for="pages"></label>
+            <input type="number" id="pages" placeholder="Pages" required>
+            
+            <div>
+            <label for="read">Have you read the book?</label>
             <input type="checkbox" id="read">
+            </div>
 
-            <button type="button" id="add-book-btn">Add</button>
+            <div class="button-container">
+                <button type="button" class="close">Close</button>
+                <button type="button" id="add-book-btn">Submit</button>
+            </div>
+            
             </form>
         </div>
     </div>
