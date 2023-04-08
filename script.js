@@ -97,7 +97,6 @@ function displayBooks() {
       library.books.splice(index, 1);
       displayBooks();
     });
-
     
     bookInfo.appendChild(removeButton);
 
