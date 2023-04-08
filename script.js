@@ -30,18 +30,18 @@ const library = {
       pages: 227,
       isRead: false
     },
-    {
-      title: "The Ruthless Elimination of Hurry",
-      author: "John Mark Comer",
-      pages: 304,
-      isRead: true
-    },
-    {
-      title: "Atomic Habits",
-      author: "James Clear",
-      pages: 320,
-      isRead: true
-    }
+    // {
+    //   title: "The Ruthless Elimination of Hurry",
+    //   author: "John Mark Comer",
+    //   pages: 304,
+    //   isRead: true
+    // },
+    // {
+    //   title: "Atomic Habits",
+    //   author: "James Clear",
+    //   pages: 320,
+    //   isRead: true
+    // }
   ]
 };
 
@@ -81,6 +81,18 @@ function displayBooks() {
     let bookRead = document.createElement("p");
     bookRead.textContent = `Read: ${book.isRead ? "Yes" : "No"}`;
     bookInfo.appendChild(bookRead);
+
+    const removeButton = document.createElement('button');
+    removeButton.classList.add('remove-button');
+    removeButton.textContent = 'Remove';
+    removeButton.addEventListener('click', () => {
+      const index = library.books.indexOf(book);
+      library.books.splice(index, 1);
+      displayBooks();
+    });
+
+    
+    bookInfo.appendChild(removeButton);
 
     bookList.appendChild(bookInfo);
   }
