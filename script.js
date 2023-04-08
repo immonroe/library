@@ -115,14 +115,14 @@ function addBookToLibrary() {
   // Create new book object
   const book = new Book(title, author, pages, isRead);
 
-  // Add new book to library
-  library.books.push(book);
-
   // Validate input
   if (!title || !author || !pages) {
     alert("Please fill in all required fields.");
     return;
   }
+  
+  // Add new book to library
+  library.books.push(book);
 
   // Clear form and close modal
   addBookForm.reset();
