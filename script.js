@@ -75,7 +75,7 @@ function displayBooks() {
 
     let bookPages = document.createElement("p");
     bookPages.classList.add("pages");
-    // bookPages.textContent = `Pages: ${book.pages}`;
+    bookPages.textContent = `Pages: ${book.pages}`;
     bookInfo.appendChild(bookPages);
 
     let bookRead = document.createElement("button");
