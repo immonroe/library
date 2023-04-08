@@ -78,8 +78,15 @@ function displayBooks() {
     bookPages.textContent = `Pages: ${book.pages}`;
     bookInfo.appendChild(bookPages);
 
-    let bookRead = document.createElement("p");
-    bookRead.textContent = `Read: ${book.isRead ? "Yes" : "No"}`;
+    let bookRead = document.createElement("button");
+    bookRead.classList.add("is-read");
+    bookRead.textContent = book.isRead ? "Read" : "Unread";
+    bookRead.style.backgroundColor = book.isRead ? "green" : "red";
+    bookRead.addEventListener("click", function() {
+      book.isRead = !book.isRead; // toggle the isRead status
+      this.textContent = book.isRead ? "Read" : "Unread";
+      this.style.backgroundColor = book.isRead ? "green" : "red";
+    });
     bookInfo.appendChild(bookRead);
 
     const removeButton = document.createElement('button');
