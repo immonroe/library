@@ -41,12 +41,12 @@ button.is-read {
     justify-content: space-around;
 }
 
-/* #book-list {
+#book-list {
 display: grid;
-grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-grid-gap: 1rem;
+grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+gap: 1rem;
 padding: 1rem;
-} */
+}
 
 .book-card {
 display: flex;

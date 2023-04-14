@@ -30,18 +30,18 @@ const library = {
       pages: 227,
       isRead: false
     },
-    // {
-    //   title: "The Ruthless Elimination of Hurry",
-    //   author: "John Mark Comer",
-    //   pages: 304,
-    //   isRead: true
-    // },
-    // {
-    //   title: "Atomic Habits",
-    //   author: "James Clear",
-    //   pages: 320,
-    //   isRead: true
-    // }
+    {
+      title: "The Ruthless Elimination of Hurry",
+      author: "John Mark Comer",
+      pages: 304,
+      isRead: true
+    },
+    {
+      title: "Atomic Habits",
+      author: "James Clear",
+      pages: 320,
+      isRead: true
+    }
   ]
 };
 
