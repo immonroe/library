@@ -18,6 +18,10 @@ h1 {
     justify-content: center;
 }
 
+button#add-book {
+    font-weight: bold;
+}
+
 button, button.close {
     transition: all .5s ease;
     color: black;
@@ -25,7 +29,6 @@ button, button.close {
     text-align: center;
     line-height: 1;
     font-size: 1.25rem;
-    font-weight: bold;
     background-color: transparent;
     padding: 0.5rem;
     outline: none;
@@ -134,7 +137,7 @@ form {
 color: #aaaaaa;
 float: right;
 font-size: 28px;
-font-weight: bold;
+/* font-weight: bold; */
 }
 
 .close:hover,
