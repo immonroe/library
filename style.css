@@ -13,6 +13,11 @@ h1 {
     font-size: 3rem;
 }
 
+.add-book-container {
+    display: flex;
+    justify-content: center;
+}
+
 button, button.close {
     transition: all .5s ease;
     color: black;
