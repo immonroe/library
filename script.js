@@ -5,17 +5,17 @@ const closeBtn = document.querySelector(".close");
 const addBookBtn = document.getElementById("add-book-btn"); // appends book to books array in library object
 
 // Open the modal
-addBookButton.addEventListener("click", function() {
+addBookButton.addEventListener("click", function () {
   bookModal.style.display = "block";
 });
 
 // Close the modal when clicking on the X button
-closeBtn.addEventListener("click", function() {
+closeBtn.addEventListener("click", function () {
   bookModal.style.display = "none";
 });
 
 // Close the modal when clicking outside of it
-window.addEventListener("click", function(event) {
+window.addEventListener("click", function (event) {
   if (event.target == bookModal) {
     bookModal.style.display = "none";
   }
@@ -28,32 +28,20 @@ class Library {
         title: "Mere Christianity",
         author: "C.S. Lewis",
         pages: 227,
-        isRead: false
+        isRead: false,
       },
       {
         title: "The Ruthless Elimination of Hurry",
         author: "John Mark Comer",
         pages: 304,
-        isRead: true
+        isRead: true,
       },
       {
         title: "Atomic Habits",
         author: "James Clear",
         pages: 320,
-        isRead: true
+        isRead: true,
       },
-      {
-        title: "New Book 1",
-        author: "Author 1",
-        pages: 200,
-        isRead: false
-      },
-      {
-        title: "New Book 2",
-        author: "Author 2",
-        pages: 150,
-        isRead: true
-      }
     ];
   }
 
@@ -66,6 +54,10 @@ class Library {
     if (index !== -1) {
       this.books.splice(index, 1);
     }
+  }
+
+  updateBook(index, book) {
+    this.books[index] = book;
   }
 }
 
@@ -111,7 +103,7 @@ function displayBooks() {
     bookRead.classList.add("is-read");
     bookRead.textContent = book.isRead ? "Read" : "Unread";
     bookRead.style.backgroundColor = book.isRead ? "green" : "red";
-    bookRead.addEventListener("click", function() {
+    bookRead.addEventListener("click", function () {
       book.toggleReadStatus();
       this.textContent = book.isRead ? "Read" : "Unread";
       this.style.backgroundColor = book.isRead ? "green" : "red";
@@ -128,7 +120,55 @@ function displayBooks() {
 
     bookInfo.appendChild(removeButton);
 
+    const editButton = document.createElement("button");
+    editButton.classList.add("edit-button");
+    editButton.textContent = "Edit";
+    editButton.addEventListener("click", () => {
+      showEditModal(book, i);
+    });
+    bookInfo.appendChild(editButton);
+
     bookList.appendChild(bookInfo);
+  }
+}
+
+function showEditModal(book, index) {
+  // Show the edit modal
+  bookModal.style.display = "block";
+
+  // Set the input values to the book's current information
+  const titleInput = document.getElementById("title");
+  const authorInput = document.getElementById("author");
+  const pagesInput = document.getElementById("pages");
+  const isReadInput = document.getElementById("read");
+
+  titleInput.value = book.title;
+  authorInput.value = book.author;
+  pagesInput.value = book.pages;
+  isReadInput.checked = book.isRead;
+
+  // Save button click event
+  const saveButton = document.getElementById("save-button");
+
+  // Remove any existing event listeners
+  saveButton.removeEventListener("click", saveBookChanges);
+
+  // Attach the event listener to the Save button
+  saveButton.addEventListener("click", saveBookChanges);
+
+  // Define the event listener function
+  function saveBookChanges() {
+    // Update the book object with the new information
+    book.title = titleInput.value;
+    book.author = authorInput.value;
+    book.pages = pagesInput.value;
+    book.isRead = isReadInput.checked;
+
+    // Close the edit modal
+    bookModal.style.display = "none";
+
+    // Refresh book list
+    displayBooks();
   }
 }
 
@@ -149,8 +189,15 @@ function addBookToLibrary() {
     return;
   }
 
-  // Add new book to library
-  library.addBook(book);
+  // Add or update book in the library
+  const existingBookIndex = library.books.findIndex(
+    (b) => b.title === title && b.author === author
+  );
+  if (existingBookIndex !== -1) {
+    library.updateBook(existingBookIndex, book);
+  } else {
+    library.addBook(book);
+  }
 
   // Clear form and close modal
   addBookForm.reset();
