@@ -1,34 +1,31 @@
-const DUMMY_DATA = [
+import BookList from "../components/layout/meetups/MeetupList";
 
+const DUMMY_DATA = [
     {
       id: 'm1',
-      title: 'This is the first book',
+      title: 'This is a first meetup/book',
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-      Author: 'Testing',
+      address: 'Meetupstreet 5, 12345 Meetup City',
       description:
-        'A really good book',
+        'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
     },
     {
       id: 'm2',
-      title: 'This is the second book',
+      title: 'This is a second meetup/book',
       image:
         'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-      address: 'YAYA YEET',
+      address: 'Meetupstreet 5, 12345 Meetup City',
       description:
-        'This book changed my life!',
+        'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
     },
 ];
 
 function AllBooks() {
     return (
       <section>
-        <h1>All Meetups</h1>
-        <ul>
-          {DUMMY_DATA.map((book) => {
-            return <li key={book.id}>{book.title}</li>;
-          })}
-        </ul>
+        <h1>All Books</h1>
+        <BookList books={DUMMY_DATA} />
       </section>
     );
   }
