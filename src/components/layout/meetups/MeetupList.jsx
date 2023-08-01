@@ -10,7 +10,7 @@ function BookList(props) {
                     id={book.id}
                     image={book.image}
                     title={book.title}
-                    address={book.address}
+                    author={book.author}
                     description={book.description}
                 />
             ))}

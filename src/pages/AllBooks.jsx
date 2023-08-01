@@ -3,21 +3,21 @@ import BookList from "../components/layout/meetups/MeetupList";
 const DUMMY_DATA = [
     {
       id: 'm1',
-      title: 'This is a first meetup/book',
+      title: 'This is the first book',
       image:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-      address: 'Meetupstreet 5, 12345 Meetup City',
+        'https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg',
+      author: 'Manny',
       description:
-        'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
+        'Great book, changed my life and helped me discover my passion for underwater basket weaving!',
     },
     {
       id: 'm2',
-      title: 'This is a second meetup/book',
+      title: 'This is the second book',
       image:
-        'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Stadtbild_M%C3%BCnchen.jpg/2560px-Stadtbild_M%C3%BCnchen.jpg',
-      address: 'Meetupstreet 5, 12345 Meetup City',
+        'https://images.pexels.com/photos/1290141/pexels-photo-1290141.jpeg',
+      author: 'Generic author name',
       description:
-        'This is a first, amazing meetup which you definitely should not miss. It will be a lot of fun!',
+        'This book was honestly terrible, not sure who decided to write it but hey I finished it so it must have been somewhat enjoyable',
     },
 ];
 
