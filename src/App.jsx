@@ -3,14 +3,16 @@ import { Route, Routes, BrowserRouter } from "react-router-dom"
 import AllBooks from "./pages/AllBooks"
 import NewBooks from "./pages/NewBooks"
 import Favorites from "./pages/Favorites"
+import MainNavigation from "./components/layout/MainNavigation"
 
 function App() {
     return (
         <div>
-          <Routes>
-                <Route path="/" element={<AllBooks />} />
-                <Route path="/new-books" element={<NewBooks />} />
-                <Route path="/favorites" element={<Favorites />} />
+            <MainNavigation />
+            <Routes>
+                  <Route path="/" element={<AllBooks />} />
+                  <Route path="/new-books" element={<NewBooks />} />
+                  <Route path="/favorites" element={<Favorites />} />
             </Routes>
         </div>
     )
