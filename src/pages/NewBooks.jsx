@@ -1,6 +1,11 @@
+import NewBookForm from "../components/layout/books/NewBookForm";
+
 function NewBooks() {
     return (
-        <div>New Books</div>
+        <section>
+            <div>New Books</div>
+            <NewBookForm />
+        </section>
     );
 }
 

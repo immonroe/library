@@ -1,4 +1,4 @@
-import BookList from "../components/layout/meetups/MeetupList";
+import BookList from "../components/layout/books/BookList";
 
 const DUMMY_DATA = [
     {
