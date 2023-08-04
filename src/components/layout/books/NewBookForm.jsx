@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import Card from '../../ui/Card'
 import classes from './NewBookForm.module.css'
 
-function NewBookForm() {
+function NewBookForm(props) {
     const titleInputRef = useRef();
     const imageInputRef = useRef();
     const authorInputRef = useRef();
@@ -23,7 +23,7 @@ function NewBookForm() {
             description: enteredDescription,
         }
 
-        console.log(meetupData);
+        props.onAddMeetup(meetupData);
     }
 
     return (
