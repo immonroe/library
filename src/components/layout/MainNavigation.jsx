@@ -18,7 +18,7 @@ function MainNavigation() {
                     <Link to='/new-books'>Add New Book</Link>
                 </li>
                 <li>
-                    <Link to='/favorites'>My Favorites <span className={classes.badge}>{favoritesCtx.totalFavorites}</span></Link>
+                    <Link to='/favorites'>My Favorites <span className={classes.badgeq}>{favoritesCtx.totalFavorites}</span></Link>
                 </li>
             </ul>
         </nav>
