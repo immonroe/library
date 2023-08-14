@@ -19,3 +19,10 @@ h2 {
   font-size: 1.5rem;
   color: #2c292b;
 }
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

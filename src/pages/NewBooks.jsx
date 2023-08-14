@@ -23,7 +23,7 @@ function NewBooks() {
 
     return (
         <div>
-            <h2>Add New Book</h2>
+            <h1>Add New Book</h1>
             <NewBookForm onAddBook={addBookHandler} />
         </div>
     );
