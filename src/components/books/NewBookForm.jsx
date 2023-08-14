@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import Card from '../../ui/Card'
+import Card from '../ui/Card'
 import classes from './NewBookForm.module.css'
 
 function NewBookForm(props) {
@@ -16,14 +16,14 @@ function NewBookForm(props) {
         const enteredAuthor = authorInputRef.current.value;
         const enteredDescription = descriptionInputRef.current.value;
 
-        const meetupData = {
+        const bookData = {
             title: enteredTitle,
             image: enteredImage,
             author: enteredAuthor,
             description: enteredDescription,
         }
 
-        props.onAddMeetup(meetupData);
+        props.onAddBook(bookData);
     }
 
     return (

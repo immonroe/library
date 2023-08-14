@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 
-import BookList from "../components/layout/books/BookList";
+import BookList from "../components/books/BookList";
 
 function AllBooks() {
     const[isLoading, setIsLoading] = useState(true);
-    const[loadedMeetups, setLoadedMeetups] = useState([])
+    const[loadedBooks, setLoadedBooks] = useState([])
 
     useEffect(() => {
       setIsLoading(true);
@@ -14,19 +14,19 @@ function AllBooks() {
           return response.json();
         }).
         then((data) => {
-          const meetups = [];
+          const books = [];
 
           for (const key in data) {
-            const meetup = {
+            const book = {
               id: key,
               ...data[key]
             }
 
-            meetups.push(meetup)
+            books.push(book)
           }
 
           setIsLoading(false)
-          setLoadedMeetups(meetups)
+          setLoadedBooks(books)
         });
     }, []); 
 
@@ -39,7 +39,7 @@ function AllBooks() {
     return (
       <section>
         <h1>All Books</h1>
-        <BookList books={loadedMeetups} />
+        <BookList books={loadedBooks} />
       </section>
     );
   }
