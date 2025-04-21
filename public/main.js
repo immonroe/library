@@ -1,5 +1,6 @@
 var thumbUp = document.getElementsByClassName("fa-thumbs-up");
 var thumbDown = document.getElementsByClassName("fa-thumbs-down");
+var editEntry = document.getElementsByClassName("fa-pencil");
 // Maybe add an edit button for book entries and grab an icon to follow a similar structure
 var trash = document.getElementsByClassName("fa-trash-o");
 

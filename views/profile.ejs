@@ -36,29 +36,38 @@
             </div>
         </div>
         <div class="col-sm-6">
+          <h2>Add a book</h2>
+        <% if (user.local.email) { %>
+          <form action="/messages" method="POST">
+            <input type="text" value="<%= user.local.email %>" name="name">
+            <input type="text" placeholder="title" name="title">
+            <input type="text" placeholder="author" name="author">
+            <input type="number" placeholder="rating" name="number" min="1" max="10">
+            <input type="text" placeholder="comment" name="msg">
+            <button type="submit">Submit</button>
+          </form>
+        </div>
+        <% } %>
           <h3>Book Shelf</h3>
           <ul class="messages">
           <% for(var i=0; i<messages.length; i++) {%>
             <li class="message">
               <span><%= messages[i].name %></span>
+              <span><%= messages[i].title %></span>
+              <span><%= messages[i].author %></span>
+              <span><%= messages[i].number %></span>
               <span><%= messages[i].msg %></span>
-              <span><%= messages[i].thumbUp %></span>
-              <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
-              <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+              <!-- <span><%= messages[i].thumbUp %></span> -->
+              
+              <!-- <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+              <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> -->
               <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
+              <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
             </li>
           <% } %>
           </ul>
 
-          <h2>Add a book</h2>
-        <% if (user.local.email) { %>
-          <form action="/messages" method="POST">
-            <input type="text" value="<%= user.local.email %>" name="name">
-            <input type="text" placeholder="message" name="msg">
-            <button type="submit">Submit</button>
-          </form>
-        </div>
-        <% } %>
+          
 
 </div>
 
