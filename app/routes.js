@@ -9,7 +9,7 @@ module.exports = function(app, passport, db) {
 
     // PROFILE SECTION =========================
     app.get('/profile', isLoggedIn, function(req, res) {
-        db.collection('messages').find().toArray((err, result) => {
+        db.collection('messages').find({ createdBy: req.user._id }).toArray((err, result) => {
           if (err) return console.log(err)
           res.render('profile.ejs', {
             user : req.user,
@@ -35,6 +35,7 @@ module.exports = function(app, passport, db) {
           author: req.body.author, 
           number: req.body.number, 
           msg: req.body.msg,
+          createdBy: req.user._id,
           // thumbUp: 0, 
           // thumbDown:0
     }, (err, result) => {
