@@ -52,17 +52,17 @@
           <ul class="messages">
           <% for(var i=0; i<messages.length; i++) {%>
             <li class="message">
-              <span><%= messages[i].name %></span>
-              <span><%= messages[i].title %></span>
-              <span><%= messages[i].author %></span>
-              <span><%= messages[i].number %></span>
-              <span><%= messages[i].msg %></span>
+              <span>Username: <%= messages[i].name %></span>
+              <span>Title: <%= messages[i].title %></span>
+              <span>Author: <%= messages[i].author %></span>
+              <span>Score (1-10): <%= messages[i].number %></span>
+              <span>Comment: <%= messages[i].msg %></span>
               <!-- <span><%= messages[i].thumbUp %></span> -->
               
               <!-- <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
               <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span> -->
               <span><i class="fa fa-trash-o" aria-hidden="true"></i></span>
-              <span><i class="fa fa-pencil" aria-hidden="true"></i></span>
+              <!-- <span><i class="fa fa-pencil" aria-hidden="true"></i></span> -->
             </li>
           <% } %>
           </ul>
