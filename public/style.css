@@ -2,6 +2,90 @@ body{
   padding-top:80px;
   word-wrap:break-word;
 }
+
 img{
   height: 200px;
+}
+
+body {
+  background-color: #f8f9fa;
+}
+
+li {
+  list-style: none;
+}
+
+.page-header {
+  margin-top: 30px;
+}
+
+.well h3 {
+  margin-top: 0;
+}
+
+form input, form button {
+  margin-bottom: 10px;
+  width: 100%;
+}
+
+.messages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0 1rem;
+  margin-top: 20px;
+  justify-content: flex-start;
+}
+.message {
+  background: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  padding: 20px;
+  width: calc(33.333% - 20px); /* 3 cards per row */
+  box-sizing: border-box;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+@media (max-width: 991px) {
+  .message {
+    width: calc(50% - 20px); /* 2 per row on tablets */
+  }
+}
+@media (max-width: 600px) {
+  .message {
+    width: 100%; /* 1 per row on mobile */
+  }
+}
+
+.message:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+.message span {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  color: #333;
+}
+
+.message span strong {
+  color: #555;
+}
+
+.message i {
+  margin-right: 10px;
+  color: #999;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.message i:hover {
+  color: #000;
+}
+
+.message-icons {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
 }
